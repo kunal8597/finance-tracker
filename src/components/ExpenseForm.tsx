@@ -48,7 +48,7 @@ export function ExpenseForm({ onSubmit, onCancel, initialData, loading = false }
   }))
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-[#1b1b1b]">
       <Input
         {...register('amount', { valueAsNumber: true })}
         label="Amount (₹)"
@@ -56,6 +56,8 @@ export function ExpenseForm({ onSubmit, onCancel, initialData, loading = false }
         step="0.01"
         min="0"
         error={errors.amount?.message}
+        className='bg-[#1b1b1b] text-gray-100'
+
       />
 
       <Select
@@ -63,6 +65,7 @@ export function ExpenseForm({ onSubmit, onCancel, initialData, loading = false }
         label="Category"
         options={categoryOptions}
         error={errors.category?.message}
+        className='bg-[#1b1b1b] text-gray-100'
       />
 
       <Input
@@ -70,13 +73,15 @@ export function ExpenseForm({ onSubmit, onCancel, initialData, loading = false }
         label="Date"
         type="date"
         error={errors.date?.message}
+        className='bg-[#1b1b1b] text-gray-100'
       />
 
       <Select
         {...register('payment_method')}
-        label="Payment Method"
+        label="Payment Method "
         options={paymentMethodOptions}
         error={errors.payment_method?.message}
+        className='bg-[#1b1b1b] text-gray-100'
       />
 
       <Input
@@ -84,13 +89,14 @@ export function ExpenseForm({ onSubmit, onCancel, initialData, loading = false }
         label="Notes (Optional)"
         type="text"
         placeholder="Add any additional notes..."
+        className='bg-[#1b1b1b] text-gray-100'
       />
 
       <div className="flex gap-3 pt-4">
-        <Button type="submit" disabled={loading} className="flex-1">
+        <Button type="submit" disabled={loading} className="flex-1 text-gray-100">
           {loading ? 'Saving...' : initialData ? 'Update Expense' : 'Add Expense'}
         </Button>
-        <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
+        <Button type="button" variant="outline" onClick={onCancel} className="flex-1 text-gray-100">
           Cancel
         </Button>
       </div>

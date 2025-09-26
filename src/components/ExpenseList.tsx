@@ -47,32 +47,34 @@ export function ExpenseList({ expenses, onEdit, onDelete, loading = false }: Exp
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 bg-[#1b1b1b]">
       {/* Filters */}
-      <div className="bg-gray-50 p-4 rounded-lg space-y-4 lg:space-y-0 lg:flex lg:gap-4 lg:items-center">
+      <div className="bg-[#1b1b1b] p-4 rounded-lg space-y-4 lg:space-y-0 lg:flex lg:gap-4 lg:items-center">
         <div className="flex-1">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className=" bg-[#1b1b1b] absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <Input
               placeholder="Search expenses..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
+              className="pl-10 bg-[#1b1b1b]"
             />
           </div>
         </div>
-        <div className="lg:w-48">
+        <div className="lg:w-48 bg-[#1b1b1b]">
           <Select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
             options={categoryOptions}
+            className='bg-[#1b1b1b]'
           />
         </div>
-        <div className="lg:w-48">
+        <div className="lg:w-48 bg-[#1b1b1b]">
           <Select
             value={paymentFilter}
             onChange={(e) => setPaymentFilter(e.target.value)}
             options={paymentOptions}
+            className='bg-[#1b1b1b]'
           />
         </div>
       </div>
@@ -87,12 +89,12 @@ export function ExpenseList({ expenses, onEdit, onDelete, loading = false }: Exp
           {filteredExpenses.map((expense) => (
             <div
               key={expense.id}
-              className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+              className="bg-[#1b1b1b] border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
             >
               <div className="flex items-center justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="font-semibold text-lg text-gray-900">
+                    <span className="font-semibold text-lg text-gray-100">
                       {formatCurrency(expense.amount)}
                     </span>
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
@@ -102,18 +104,19 @@ export function ExpenseList({ expenses, onEdit, onDelete, loading = false }: Exp
                       {expense.payment_method}
                     </span>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-400">
                     <div className="mb-1">{formatDisplayDate(expense.date)}</div>
                     {expense.notes && (
                       <div className="text-gray-500 italic">{expense.notes}</div>
                     )}
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 ">
                   <Button
                     size="sm"
                     variant="outline"
                     onClick={() => onEdit(expense)}
+                    className='text-gray-200'
                   >
                     <Edit2 className="w-4 h-4" />
                   </Button>

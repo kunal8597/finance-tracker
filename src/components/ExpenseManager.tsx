@@ -61,7 +61,7 @@ export function ExpenseManager() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Manage Expenses</h2>
+        <h2 className="text-2xl font-bold text-gray-100">Manage Expenses</h2>
         <Button onClick={() => setShowModal(true)}>
           <Plus className="w-4 h-4 mr-2" />
           Add Expense
