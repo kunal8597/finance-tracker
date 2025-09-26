@@ -17,8 +17,8 @@ export default function App() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600">Loading...</div>
+      <div className="min-h-screen bg-[#121212] flex items-center justify-center">
+        <div className="text-gray-300">Loading...</div>
       </div>
     )
   }
@@ -43,7 +43,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#121212] text-white">
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
       <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {renderActiveTab()}
