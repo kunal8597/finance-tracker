@@ -41,12 +41,13 @@ export function BudgetForm({ onSubmit, onCancel, initialData, loading = false }:
   }))
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-[#1b1b1b]">
       <Select
         {...register('category')}
         label="Category"
         options={categoryOptions}
         error={errors.category?.message}
+        className='bg-[#1b1b1b] text-gray-200'
       />
 
       <Input
@@ -56,6 +57,7 @@ export function BudgetForm({ onSubmit, onCancel, initialData, loading = false }:
         step="0.01"
         min="0"
         error={errors.monthly_limit?.message}
+        className='bg-[#1b1b1b]'
       />
 
       <Input
@@ -63,13 +65,14 @@ export function BudgetForm({ onSubmit, onCancel, initialData, loading = false }:
         label="Month"
         type="month"
         error={errors.month?.message}
+        className='bg-[#1b1b1b]'
       />
 
       <div className="flex gap-3 pt-4">
-        <Button type="submit" disabled={loading} className="flex-1">
+        <Button type="submit" disabled={loading} className="flex-1 text-gray-200">
           {loading ? 'Saving...' : initialData ? 'Update Budget' : 'Add Budget'}
         </Button>
-        <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
+        <Button type="button" variant="outline" onClick={onCancel} className="flex-1 text-gray-200">
           Cancel
         </Button>
       </div>

@@ -61,7 +61,7 @@ export function BudgetManager() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Manage Budgets</h2>
+        <h2 className="text-2xl font-bold text-gray-200">Manage Budgets</h2>
         <Button onClick={() => setShowModal(true)}>
           <Plus className="w-4 h-4 mr-2" />
           Add Budget
@@ -73,6 +73,7 @@ export function BudgetManager() {
         onEdit={openEditModal}
         onDelete={handleDeleteBudget}
         loading={loading}
+      
       />
 
       <Modal
