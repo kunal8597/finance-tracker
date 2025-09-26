@@ -52,7 +52,7 @@ export function BudgetList({ budgets, onEdit, onDelete, loading = false }: Budge
             <div className="flex items-center gap-2">
               <Button
                 size="sm"
-                variant="outline"
+                variant="secondary"
                 onClick={() => onEdit(budget)}
                 className='text-gray-200'
               >

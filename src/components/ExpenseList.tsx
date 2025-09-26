@@ -114,7 +114,7 @@ export function ExpenseList({ expenses, onEdit, onDelete, loading = false }: Exp
                 <div className="flex items-center gap-2 ">
                   <Button
                     size="sm"
-                    variant="outline"
+                    variant="secondary"
                     onClick={() => onEdit(expense)}
                     className='text-gray-200'
                   >
