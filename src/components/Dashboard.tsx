@@ -23,37 +23,37 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-6">
-            <div className="text-2xl font-bold text-gray-900">
+            <div className="text-2xl font-bold text-gray-100">
               {formatCurrency(analysis.totalSpent)}
             </div>
-            <p className="text-sm text-gray-600">Total Spent This Month</p>
+            <p className="text-sm text-gray-400">Total Spent This Month</p>
           </CardContent>
         </Card>
         
         <Card>
           <CardContent className="p-6">
-            <div className="text-2xl font-bold text-gray-900">
+            <div className="text-2xl font-bold text-gray-100">
               {analysis.topCategory}
             </div>
-            <p className="text-sm text-gray-600">Top Spending Category</p>
+            <p className="text-sm text-gray-400">Top Spending Category</p>
           </CardContent>
         </Card>
         
         <Card>
           <CardContent className="p-6">
-            <div className="text-2xl font-bold text-gray-900">
+            <div className="text-2xl font-bold text-gray-100">
               {analysis.topPaymentMethods[0]?.method || 'None'}
             </div>
-            <p className="text-sm text-gray-600">Most Used Payment Method</p>
+            <p className="text-sm text-gray-400">Most Used Payment Method</p>
           </CardContent>
         </Card>
         
         <Card>
           <CardContent className="p-6">
-            <div className="text-2xl font-bold text-gray-900">
+            <div className="text-2xl font-bold text-gray-100">
               {analysis.budgetAlerts.length}
             </div>
-            <p className="text-sm text-gray-600">Budget Alerts</p>
+            <p className="text-sm text-gray-400">Budget Alerts</p>
           </CardContent>
         </Card>
       </div>
@@ -61,7 +61,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
       {/* Budget Alerts */}
       {analysis.budgetAlerts.length > 0 && (
         <div className="space-y-3">
-          <h3 className="text-lg font-semibold text-gray-900">Budget Alerts</h3>
+          <h3 className="text-lg font-semibold text-gray-100">Budget Alerts</h3>
           {analysis.budgetAlerts.map((alert, index) => (
             <Alert
               key={index}
@@ -76,7 +76,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
       {suggestions.length > 0 && (
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">Smart Suggestions</h3>
+            <h3 className="text-lg font-semibold text-gray-100">Smart Suggestions</h3>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -92,7 +92,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
         {/* Category Breakdown Pie Chart */}
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">Category Breakdown</h3>
+            <h3 className="text-lg font-semibold text-gray-100">Category Breakdown</h3>
           </CardHeader>
           <CardContent>
             {analysis.categoryBreakdown.length > 0 ? (
@@ -116,7 +116,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <div className="flex items-center justify-center h-64 text-gray-500">
+              <div className="flex items-center justify-center h-64 text-gray-400">
                 No expense data to display
               </div>
             )}
@@ -126,7 +126,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
         {/* Spending Trend Line Chart */}
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">Daily Spending (Last 30 Days)</h3>
+            <h3 className="text-lg font-semibold text-gray-100">Daily Spending (Last 30 Days)</h3>
           </CardHeader>
           <CardContent>
             {analysis.dailySpending.length > 0 ? (
@@ -141,7 +141,7 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
                 </LineChart>
               </ResponsiveContainer>
             ) : (
-              <div className="flex items-center justify-center h-64 text-gray-500">
+              <div className="flex items-center justify-center h-64 text-gray-400">
                 No spending data to display
               </div>
             )}
@@ -153,22 +153,22 @@ export function Dashboard({ expenses, budgets }: DashboardProps) {
       {analysis.topPaymentMethods.length > 0 && (
         <Card>
           <CardHeader>
-            <h3 className="text-lg font-semibold text-gray-900">Top Payment Methods</h3>
+            <h3 className="text-lg font-semibold text-gray-100">Top Payment Methods</h3>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               {analysis.topPaymentMethods.map((method, index) => (
-                <div key={method.method} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div key={method.method} className="flex items-center justify-between p-3 bg-[#1b1b1b] rounded-lg">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-sm font-semibold">
                       {index + 1}
                     </div>
                     <div>
-                      <div className="font-medium text-gray-900">{method.method}</div>
-                      <div className="text-sm text-gray-500">{method.count} transactions</div>
+                      <div className="font-medium text-gray-100">{method.method}</div>
+                      <div className="text-sm text-gray-400">{method.count} transactions</div>
                     </div>
                   </div>
-                  <div className="font-semibold text-gray-900">
+                  <div className="font-semibold text-gray-100">
                     {formatCurrency(method.amount)}
                   </div>
                 </div>
