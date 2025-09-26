@@ -2,7 +2,7 @@
 - Track expenses, set budgets, and see a monthly report with insights.
 
 ### Live
-- <your-live-url-here>
+- https://finance-tracker-five-dusky.vercel.app/
 
 ### Test Login
 - Email: user@example.com
