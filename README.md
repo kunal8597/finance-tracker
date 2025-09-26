@@ -6,7 +6,7 @@
 
 ### Test Login
 - Email: user@example.com
-- Password: 123456
+- Password: Abc@123
 
 ### Run (Frontend)
 ```bash
